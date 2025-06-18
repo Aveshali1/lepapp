@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: lepdep-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: AZURE_SQL_SERVER
+        value: your-server.database.windows.net
+      - key: AZURE_SQL_DATABASE
+        value: azuredatabase1
+      - key: AZURE_SQL_USERNAME
+        value: Avesh01
+      - key: AZURE_SQL_PASSWORD
+        value: your_password_here
+      - key: PORT
+        value: 10000
