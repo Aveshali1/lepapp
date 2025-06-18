@@ -16,6 +16,11 @@ conn_str = (
     f"SERVER={server};DATABASE={database};UID={username};PWD={password}"
 )
 
+# ✅ This will fix the "Not Found" error
+@app.route('/')
+def index():
+    return 'API is working. Use /submit_form to POST data.'
+
 @app.route('/submit_form', methods=['POST'])
 def submit_form():
     try:
